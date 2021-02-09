@@ -52,8 +52,62 @@ description = `${country} is in ${continent},
 and its ${population} people speak ${language}`;
 console.log(description);
 
+// LECTURE: Taking Decisions: if / else Statements
+
+if(population > averagePopulation){
+console.log(`${country}'s populations is above on ${population - averagePopulation} than verage on average popultion.`)
+} else {
+    console.log(`${country}'s populations is below than average`);
+}
+
 //type coercion;
 console.log('23' + '13' + 10); //Output 231310, because "+". It converts number 10 to String. Only with +
 console.log('23' - '13' - 1); // Output will be 9  because "-". It converts number 1 to String.
 console.log('23' > '10'); // output true. JS automaticly converts value due to compare operator
 console.log('23' * '10'); // output 230. JS automaticly converts value due to compare operator
+
+
+// LECTURE: Type Conversion and Coercion
+'9' - '5'; //4
+'19' - '13' + '17'; //617
+'19' - '13' + 17; // 23
+'123' < 57; // false
+console.log(5 + 6 + '4' + 9 - 4 - 2); //1143
+
+// LECTURE: Equality Operators: == vs. ===
+
+// let numNeighbours = Number(prompt('How many neighbour countries does your country have?'));
+// console.log("This is numNeighbours ", numNeighbours);
+
+// if (numNeighbours === 1) {
+//     console.log("Only 1 border");
+// } else if (numNeighbours > 1) {
+//     console.log("More than 1 border");
+// } else if (numNeighbours == 0) {
+//     console.log("No borders");
+// }
+
+// LECTURE: The switch Statement
+
+let language2 = 'mandarin';
+
+switch (language2) {
+    case 'chinese' :
+    case 'mandarin' : 
+        console.log('MOST number of native speakers!');
+    break;
+    case 'spanish' : 
+        console.log('2nd place in number of native speakers');
+    break;
+    case 'english' : 
+        console.log('3rd place');
+    break;
+    case 'hindi' :
+        console.log('Number 4');
+    break;
+    case 'arabic' :
+        console.log('5th most spoken language');
+    break;
+    default:
+        console.log('Great language too :D');
+} 
