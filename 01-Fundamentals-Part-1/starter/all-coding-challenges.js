@@ -70,8 +70,8 @@ if(bmiMark > bmiJohn) {
 // With this rule, a team only wins if it has a higher score than the other team, and the same time a score of at least 100 points. 
 // Hint: Use a logical operator to test for minimum score, as well as multiple else-if blocks 😉
 //Data Bonus 1
-let averageDolphinsScore = (97 + 112 + 101) / 3;
-let averageKoalasScore = (109 + 95 + 123) / 3;
+let averageDolphinsScore = (7 + 112 + 101) / 3;
+let averageKoalasScore = (19 + 95 + 123) / 3;
 let minimumScore = 100;
 
 
@@ -79,9 +79,10 @@ if(averageDolphinsScore > averageKoalasScore && averageDolphinsScore >= minimumS
     console.log("Dolphin wins");
 } else if (averageKoalasScore > averageDolphinsScore && averageKoalasScore >= minimumScore) {
     console.log('Koala wins')
-} else {
-    if (averageKoalasScore === averageDolphinsScore && averageDolphinsScore >= minimumScore && averageKoalasScore >=minimumScore) 
+} else if (averageKoalasScore === averageDolphinsScore && averageDolphinsScore >= minimumScore && averageKoalasScore >=minimumScore) {
     console.log("It's a draw");
+} else {
+    console.log("No one wins");
 }
     
 
