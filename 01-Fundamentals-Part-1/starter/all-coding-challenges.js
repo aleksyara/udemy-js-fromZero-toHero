@@ -42,18 +42,48 @@ if(bmiMark > bmiJohn) {
 // There are two gymnastics teams, Dolphins and Koalas. They compete against each other 3 times. 
 // The winner with the highest average score wins a trophy!
 
-// Your tasks:
-// 1. Calculatetheaveragescoreforeachteam,usingthetestdatabelow
-// 2. Comparetheteam'saveragescorestodeterminethewinnerofthecompetition,
-// and print it to the console. Don't forget that there can be a draw, so test for that
-// // as well (draw means they have the same average score)
-// Bonus1:Includearequirementforaminimumscoreof100.Withthisrule,a
-// team only wins if it has a higher score than the other team, and the same time a score of at least 100 points. 
-// Hint: Use a logical operator to test for minimum score, as well as multiple else-if blocks 😉
-// Bonus2: Minimumscorealsoappliestoadraw!Soadrawonlyhappenswhen both teams have the same score and both have a score greater or equal 100 points. 
-// Otherwise, no team wins the trophy.
-
 // Test data:
 
 // § Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
-// § Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123 § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+// § Data Bonus 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123 
+// § Data Bonus 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+
+// Your tasks:
+// 1. Calculate the average score for each team, using the test data below
+//Data 1
+// let averageDolphinsScore = (96 + 108 + 89) / 3;
+// let averageKoalasScore = (88 + 91 + 110) / 3;
+
+// 2. Compare the team's average scores to determine the winner of the competition,
+// and print it to the console. Don't forget that there can be a draw, so test for that
+// as well (draw means they have the same average score)
+
+// if(averageDolphinsScore > averageKoalasScore) {
+//     console.log("Dolphin wins");
+//  } else if (averageKoalasScore > averageDolphinsScore) {
+//    console.log('Koala wins')
+//  } else {
+//      console.log("It's a draw");
+//  }
+
+// Bonus1: Include a requirement for a minimum score of 100. 
+// With this rule, a team only wins if it has a higher score than the other team, and the same time a score of at least 100 points. 
+// Hint: Use a logical operator to test for minimum score, as well as multiple else-if blocks 😉
+//Data Bonus 1
+let averageDolphinsScore = (97 + 112 + 101) / 3;
+let averageKoalasScore = (109 + 95 + 123) / 3;
+let minimumScore = 100;
+
+
+if(averageDolphinsScore > averageKoalasScore && averageDolphinsScore >= minimumScore) {
+    console.log("Dolphin wins");
+} else if (averageKoalasScore > averageDolphinsScore && averageKoalasScore >= minimumScore) {
+    console.log('Koala wins')
+} else {
+    if (averageKoalasScore === averageDolphinsScore && averageDolphinsScore >= minimumScore && averageKoalasScore >=minimumScore) 
+    console.log("It's a draw");
+}
+    
+
+// Bonus2: Minimum score also applies to adraw! So a draw only happens when both teams have the same score and both have a score greater or equal 100 points. 
+// Otherwise, no team wins the trophy.
