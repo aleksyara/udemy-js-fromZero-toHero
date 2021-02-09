@@ -43,30 +43,17 @@ console.log("Compare Poulation. Does my population more than in Finland?", compa
 let averagePopulation = 33000000;
 let comparePopulation2 = (population > averagePopulation);
 console.log("Compare Poulation. Does my average population more than in your country?", comparePopulation2);
+let description = 'Portugal is in Europe, and its 11 million people speak portuguese';
 
 
-// Coding Challenge #1
-// Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula:
-// BMI = mass / height ** 2 = mass / (height * height) (mass in kg and height in meter).
-// Your tasks:
-// 1. StoreMark's and John's mass and height in variables
-let massMark =  78;
-let heightMark = 1.69;
-let massJohn = 92;
-let heightJohn = 1.95;
+// LECTURE: Strings and Template Literals
+// 1. Recreate the 'description' variable from the last assignment, thistime using the template literal syntax
+description = `${country} is in ${continent}, 
+and its ${population} people speak ${language}`;
+console.log(description);
 
-// 2. Calculate both their BMI susing the formula (you can even implement both
-// versions)
-
-let bmiMark = massMark / heightMark ** 2
-console.log("this is bmiMark", bmiMark);
-
-let bmiJohn = massJohn / heightJohn ** 2
-console.log("this is bmiJohn", bmiJohn);
-
-
-// 3. Createa Boolean variable 'markHigherBMI' containing information about
-// whether Mark has a higher BMI than John.
-
-let markHigherBMI = (bmiMark > bmiJohn);
-console.log(markHigherBMI);
+//type coercion;
+console.log('23' + '13' + 10); //Output 231310, because "+". It converts number 10 to String. Only with +
+console.log('23' - '13' - 1); // Output will be 9  because "-". It converts number 1 to String.
+console.log('23' > '10'); // output true. JS automaticly converts value due to compare operator
+console.log('23' * '10'); // output 230. JS automaticly converts value due to compare operator
