@@ -81,7 +81,43 @@ console.log(describeRussia);
 
 
 // LECTURE 39: Introduction to Arrays
-// 1. Createanarraycontaining4populationvaluesof4countriesofyourchoice. You may use the values you have been using previously. Store this array into a variable called 'populations'
+
+// 1. Create anarraycontaining4populationvaluesof4countriesofyourchoice. You may use the values you have been using previously. Store this array into a variable called 'populations'
+let populationArr = [1441, 146, 336, 60];
 // 2. Logtotheconsolewhetherthearrayhas4elementsornot(trueorfalse)
+console.log(populationArr);
 // 3. Createanarraycalled'percentages'containingthepercentagesofthe
 // world population for these 4 population values. Use the function 'percentageOfWorld1' that you created earlier to compute the 4 percentage values
+let percentagesArr = [18, 1, 4, 0.5];
+console.log(percentagesArr);
+
+// LECTURE 40: Basic Array Operations (Methods)
+// 1. Createanarraycontainingalltheneighbouringcountriesofacountryofyour choice. Choose a country which has at least 2 or 3 neighbours. Store the array into a variable called 'neighbours'
+
+let  neighboursArr = ["Germany", "Russia", "Belarusia", "Moldova", "Poland"];
+
+// 2. Atsomepoint,anewcountrycalled'Utopia'iscreatedintheneighbourhoodof your selected country. So add it to the end of the 'neighbours' array
+neighboursArr.push("Utopia");
+console.log(neighboursArr);
+
+// 3. Unfortunately,aftersometime,thenewcountryisdissolved.Soremoveitfrom the end of the array
+neighboursArr.pop(neighboursArr[neighboursArr.length]);
+console.log(neighboursArr);
+// 4. Ifthe'neighbours'arraydoesnotincludethecountry‘Germany’,logtothe console: 'Probably not a central European country :D'
+
+if (!neighboursArr.includes("Germany")){
+    console.log('Probably not a central European country :D');
+} else {
+    console.log("Shpreihen the Dutch?");
+}
+
+// 5. Changethenameofoneofyourneighbouringcountries.Todothat,findthe index of the country in the 'neighbours' array, and then use that index to change the array at that index position. 
+// For example, you can search for 'Sweden' in the array, and then replace it with 'Republic of Sweden'.
+
+console.log(neighboursArr.indexOf("Russia"));
+neighboursArr[1] = "Russian Federation";
+console.log(neighboursArr);
+
+
+// LECTURE 42: Introduction to Objects
+// 1. Createanobjectcalled'myCountry'foracountryofyourchoice,containing properties 'country', 'capital', 'language', 'population' and 'neighbours' (an array like we used in previous assignments)
