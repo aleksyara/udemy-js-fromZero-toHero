@@ -27,9 +27,38 @@ console.log("This is about Mexico: ", aboutMexico);
 // 1.  The world populationis 7900 million people. Create a function declaration called 'percentageOfWorld1' 
 //     which receives a 'population' value, and returns the percentage of the world population that the given population represents. 
 //     For example, China has 1441 million people, so it's about 18.2% of the world population
-        
+// 2.  To calculate the percentage, divide the given 'population'valueby7900 and then multiply by 100
 
-// 2.  Tocal culatethepercentage,dividethegiven'population'valueby7900 and then multiply by 100
+        let worldPopulation = 7900;
+
+        function percentageOfWorld1 (population){
+            let result = (population / worldPopulation) * 100;
+            return result;
+        }
+
+        console.log(percentageOfWorld1 (1441));
+
+
 // 3.  Call 'percentageOfWorld1' for 3 populations of countries of your choice, store the results into variables, and log them to the console
 // 4.  Create a function expression which does the exact same thing, called 'percentageOfWorld2', 
 //     and also call it with 3 country populations (can be the same populations)
+
+let percentageOfWorld2 = function (population){
+    return Math.floor((population / worldPopulation) * 100);
+}
+
+let percRussia = percentageOfWorld2(145);
+let percUSA = percentageOfWorld2(332);
+let percChina = percentageOfWorld2(1441);
+
+console.log(percRussia, percUSA, percChina);
+
+// LECTURE: Arrow Functions 35
+// 1. Recreate the last assignment, but this timecreateanarrowfunctioncalled
+//    'percentageOfWorld3'
+
+let percentageOfWorld3 = (population) => (population / worldPopulation) * 100;
+
+let percUkraine = percentageOfWorld3(60);
+console.log(percUkraine);
+
