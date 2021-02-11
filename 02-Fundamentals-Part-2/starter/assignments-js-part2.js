@@ -206,3 +206,88 @@ console.log("This is myCountry2.isNeighbour:----> ", myCountry2.isNeighbour);
 myCountry2.climate = "tundra";
 
 console.log("This is myCountry2 ", myCountry2);
+
+
+// LECTURE 46: Iteration: The for Loop
+// 1. There are elections in yourcountry!Inasmalltown,thereareonly50voters. Use a for loop to simulate the 50 people voting, by logging a string like this to the console (for numbers 1 to 50): 'Voter number 1 is currently voting'
+
+console.log("*** LECTURE 46 ***");
+
+let voters = 50;
+
+for (let i = 0; i <= voters; i ++){
+    console.log(`Voter number ${i} is curently voting`);
+}
+
+// LECTURE 47: Looping Arrays, Breaking and Continuing
+// 1. Let'sbringbackthe'populations'arrayfromapreviousassignment
+console.log("this is populations", populationArr);
+
+// 2. Useaforlooptocomputeanarraycalled'percentages2'containingthe
+// percentages of the world population for the 4 population values. Use the
+// function 'percentageOfWorld1' that you created earlier
+let percentages2 = [];
+//Solution 1 forEach
+populationArr.forEach(
+    elem => percentages2.push(percentageOfWorld2(elem))
+);
+console.log("using forEach", percentages2);
+
+//Solution 2. for loop
+let percentages3 = [];
+for (let i = 0; i < populationArr.length; i++) {
+    const perc = percentageOfWorld2(populationArr[i]);
+      percentages3.push(perc);
+    }
+console.log("using for loop", percentages3);
+
+// 3. Confirmthat'percentages2'containsexactlythesamevaluesasthe
+// 'percentages' array that we created manually in the previous assignment, and reflect on how much better this solution is
+
+
+// LECTURE 48: Looping Backwards and Loops in Loops
+// 1. Storethisarrayofarraysintoavariablecalled'listOfNeighbours' [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+// 2. Logonlytheneighbouringcountriestotheconsole,onebyone,nottheentire arrays. Log a string like 'Neighbour: Canada' for each country
+// 3. Youwillneedaloopinsidealoopforthis.Thisisactuallyabittricky,sodon't worry if it's too difficult for you! But you can still try to figure this out anyway
+console.log("*** LECTURE 48 ***");
+
+let listOfNeighbours = [
+    ['Canada', 'Mexico'], 
+    ['Spain'], 
+    ['Norway', 'Sweden', 'Russia']
+];
+
+// if (listOfNeighbours.length)
+for (let i = 0; i < listOfNeighbours.length; i++) {
+    //console.log(listOfNeighbours[i]);
+    // console.log("listOfNeighbours[i].length", listOfNeighbours[i].length);
+    
+    // if (listOfNeighbours[i].length > 1) { // <----print only one conutry from the nested arr that has a neighour
+    //     console.log(`Nieighbor ${listOfNeighbours[i][0]}`);
+    // }
+    for (let y = 0; y < listOfNeighbours[i].length; y++){
+        console.log("listOfNeighbours[i][y]", listOfNeighbours[i][y]);
+    }
+
+}
+
+//forEach
+
+// function logArray(elem, index, array){
+//     console.log(`a [ ${index} ] = ${elem}`);
+// }
+
+// listOfNeighbours.forEach(logArray);
+
+console.log("*** LECTURE 49 ***");
+// LECTURE: The while Loop
+// 1. Recreatethechallengefromthelecture'LoopingArrays,BreakingandContinuing', but this time using a while loop (call the array 'percentages3')
+// 2. Reflectonwhatsolutionyoulikebetterforthistask:theforlooporthewhile loop?
+const percentages4 = []
+let i = 0;
+while (i < populationArr.length) {
+    const perc = percentageOfWorld2(populationArr[i]);
+    percentages4.push(perc);
+    i++;
+}
+console.log("using While loop", percentages4);

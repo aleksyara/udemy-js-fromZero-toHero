@@ -75,7 +75,7 @@ console.log("this is a TipsArr", tipsArr);
 console.log("****");
 let totalArr = billArr.map(function (num, idx) {
     // console.log("this is num", num);
-    // console.log("this is idx", idx);
+    console.log("this is idx", idx);
     return num + tipsArr[idx];
 });
 console.log("This is total: ", totalArr);
@@ -132,3 +132,56 @@ console.log("user 1 BMI ---->", user1.BMI);
 // console.log("whoseBMIHigher", whoseBMIHigher);
 
 // Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
+
+// Coding Challenge #4
+
+// Let's improve Steven's tip calculator even more, this time using loops!
+
+// Your tasks:
+// 1. Create an array 'bills' containing all 10 test bill values
+let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+
+// 2. Create empty arrays for the tips and the totals ('tips' and 'totals')
+let tips = [];
+let totals = [];
+console.log(bills, tips, totals);
+// 3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
+// Test data: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52
+
+for (let i = 0; i < bills.length; i++){
+    let temp = calcTip(bills[i]);
+    // console.log("temp ====>>>", temp);
+    tips.push(temp);
+}
+console.log("tips Array =====>", tips);
+
+bills.forEach( function(elem, idx){
+  totals.push(elem + tips[idx]);   
+})
+
+console.log("totals Array =====>", totals);
+
+
+
+// Hints: Call ‘calcTip ‘in the loop and use the push method to add values to the
+// tips and totals arrays 😉 Bonus:
+
+// 4. Bonus:Writeafunction'calcAverage'whichtakesanarraycalled'arr'as an argument. This function calculates the average of all numbers in the given array. This is a difficult challenge (we haven't done this before)! Here is how to solve it:
+// 4.1. First, you will need to add up all values in the array. To do the addition, start by creating a variable 'sum' that starts at 0. Then loop over the array using a for loop. In each iteration, add the current value to the 'sum' variable. This way, by the end of the loop, you have all values added together
+// 4.2. To calculate the average, divide the sum you calculated before by the length of the array (because that's the number of elements)
+// 4.3. Call the function with the 'totals' array
+console.log("BONUS =====>");
+let calcAverage2 = function(arr){
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+        // console.log(arr[i]);
+        // console.log(sum);
+        sum += arr[i];
+        // console.log(sum);
+        // console.log(arr.length);
+    }
+    return sum / arr.length;
+}
+
+console.log(calcAverage2([2, 3, 7]));
+console.log(calcAverage2(totals));
