@@ -121,3 +121,88 @@ console.log(neighboursArr);
 
 // LECTURE 42: Introduction to Objects
 // 1. Createanobjectcalled'myCountry'foracountryofyourchoice,containing properties 'country', 'capital', 'language', 'population' and 'neighbours' (an array like we used in previous assignments)
+
+let myCountry = {
+    country: "USA",
+    capital: "Washington D.C.",
+    language: "english",
+    population: 336,
+    neighbours: ["Canada", "Mexico"]
+}
+console.log(myCountry);
+
+// LECTURE 43: Dot vs. Bracket Notation
+// 1. Usingtheobjectfromthepreviousassignment,logastringlikethistothe console: 'Finland has 6 million finnish-speaking people, 3 neighbouring countries and a capital called Helsinki.'
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language} people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`);
+console.log("this is myCountry.neighbours[0]: ", myCountry.neighbours[0])
+//usung Bracket Notation
+console.log("this is a language property in myContry object: ", myCountry["language"]);
+
+// 2. Increasethecountry'spopulationbytwomillionusingdotnotation,andthen decrease it by two million using brackets notation.
+myCountry.population += 2;
+console.log(myCountry.population);
+myCountry['population'] -= 2;
+console.log(myCountry.population);
+
+//Add property to the obkect
+myCountry.climate = 'tropical';
+console.log(myCountry);
+
+// LECTURE 44: Object Methods
+
+console.log("*******");
+
+let myCountry2 = {
+    country: "USA",
+    capital: "Washington D.C.",
+    language: "english",
+    DOB: 1861,
+    population: 336,
+    neighbours: ["Canada", "Mexico"],
+    hasAccess: true,
+
+    // callAge: function(birthyear){
+    //     return 2037 - birthyear
+    // }
+
+    describeCountry: function(){
+        console.log(`describeCountry returns this message: 
+        ${this.country} has 
+        ${this.population} million 
+        ${this.language} people,
+        ${this.neighbours.length} neighbouring countries and a capital called 
+        ${this.capital}.`);
+        
+    },
+
+    checkNeighbors: function(){
+        // console.log("checkpoint 1");
+        this.isNeighbor = this.neighbours.length = 0 ? false : true;
+        // this.isNeighbor = this.neighbours.length = 0 ? console.log("This is an Island. No neighbors") : console.log("You have a good neighbors");
+        // console.log("checkpoint 2");
+        return this.isNeighbor;
+    }
+}
+
+
+console.log("This is myCountry2.callNeighbors():----> ", myCountry2.isNeighbor);
+
+// 1. Add a method called 'describe'tothe'myCountry'object.Thismethod will log a string to the console, similar to the string logged in the previous assignment, but this time using the 'this' keyword.
+// See above ^^^^^^^^^
+// 2. Callthe'describe'method
+myCountry2.describeCountry();
+
+// 3. Add a method called 'checkIsland' to the 'myCountry' object.
+// This method will set a new property on the object, called 'isIsland'. 'isIsland' will be true if there are no neighbouring countries, and false if there are. Use the ternary operator to set the property.
+
+//checking function in the object
+// way 1
+// console.log("This is myCountry2.checkNeighbors(1861):----> ", myCountry2.checkNeighbors(1861));
+// way 2
+console.log("This is myCountry2.checkNeighbors():----> ", myCountry2.checkNeighbors());
+console.log("This is myCountry2.isNeighbor:----> ", myCountry2.isNeighbor);
+
+// Add new property to the opeject:
+myCountry2.climate = "tundra";
+
+console.log("This is myCountry2 ", myCountry2);
