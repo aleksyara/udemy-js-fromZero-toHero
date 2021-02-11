@@ -175,17 +175,17 @@ let myCountry2 = {
         
     },
 
-    checkNeighbors: function(){
+    checkNeighbour: function(){
         // console.log("checkpoint 1");
-        this.isNeighbor = this.neighbours.length = 0 ? false : true;
-        // this.isNeighbor = this.neighbours.length = 0 ? console.log("This is an Island. No neighbors") : console.log("You have a good neighbors");
+        this.isNeighbour = this.neighbours.length = 0 ? false : true;
+        // this.isNeighbour = this.neighbours.length = 0 ? console.log("This is an Island. No neighbors") : console.log("You have a good neighbors");
         // console.log("checkpoint 2");
-        return this.isNeighbor;
+        return this.isNeighbour;
     }
 }
 
 
-console.log("This is myCountry2.callNeighbors():----> ", myCountry2.isNeighbor);
+console.log("This is myCountry2.callNeighbors():----> ", myCountry2.isNeighbour);
 
 // 1. Add a method called 'describe'tothe'myCountry'object.Thismethod will log a string to the console, similar to the string logged in the previous assignment, but this time using the 'this' keyword.
 // See above ^^^^^^^^^
@@ -197,10 +197,10 @@ myCountry2.describeCountry();
 
 //checking function in the object
 // way 1
-// console.log("This is myCountry2.checkNeighbors(1861):----> ", myCountry2.checkNeighbors(1861));
+// console.log("This is myCountry2.checkNeighbour(1861):----> ", myCountry2.checkNeighbour(1861));
 // way 2
-console.log("This is myCountry2.checkNeighbors():----> ", myCountry2.checkNeighbors());
-console.log("This is myCountry2.isNeighbor:----> ", myCountry2.isNeighbor);
+console.log("This is myCountry2.checkNeighbour():----> ", myCountry2.checkNeighbour());
+console.log("This is myCountry2.isNeighbour:----> ", myCountry2.isNeighbour);
 
 // Add new property to the opeject:
 myCountry2.climate = "tundra";

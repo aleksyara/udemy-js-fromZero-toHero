@@ -47,6 +47,7 @@ checkWinner(avrgDolphinsScore, avrgKoalasScore);
 // Apply this to the team's average scores 😉
 
 // Coding Challenge #2
+
 // Steven is still building his tip calculator, using the same rules as before: Tip 15% of the bill if the bill value is between 50 and 300, and if the value is different, the tip is 20%.
 // Your tasks:
 // 1. Writeafunction'calcTip'thattakesanybillvalueasaninputandreturns the corresponding tip, calculated based on the rules above (you can check out the code from first tip calculator challenge if you need to). Use the function type you like the most. Test the function using a bill value of 100
@@ -79,3 +80,55 @@ let totalArr = billArr.map(function (num, idx) {
 });
 console.log("This is total: ", totalArr);
 
+
+// Coding Challenge #3
+
+// Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations! Remember: BMI = mass / height ** 2 = mass / (height * height) (mass in kg and height in meter)
+// Your tasks:
+// 1. Foreachofthem,createanobjectwithpropertiesfortheirfullname,mass,and height (Mark Miller and John Smith)
+
+let user1 = {
+    firstName: "Mark",
+    lastName: "Miller",
+    mass: 100,
+    height: 1.86,
+
+    calcBMI: function(){
+        this.BMI = this.mass / (this.height ** 2);
+        // console.log("User 1 BMI:*********** ", this.BMI);
+        return this.BMI
+
+    }
+}
+
+let user2 = {
+    firstName: "John",
+    lastName: "Vuk",
+    mass: 135,
+    height: 2,
+    
+    calcBMI: function(){
+        this.BMI = this.mass / (this.height ** 2);
+        // console.log("User 2 BMI:*********** ", this.BMI);
+        return this.BMI
+
+    }
+}
+
+// 2. Createa'calcBMI'methodoneachobjecttocalculatetheBMI(thesame method on both objects). Store the BMI value to a property, and also return it from the method
+console.log("checkpoint 2");
+console.log("calling calcBMI() of user2 ---->", user2.calcBMI());
+console.log("user2 BMI ---->", user2.BMI);
+
+// 3. LogtotheconsolewhohasthehigherBMI,togetherwiththefullnameandthe respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+console.log("calling calcBMI() of user1 ---->", user1.calcBMI());
+console.log("user 1 BMI ---->", user1.BMI);
+
+
+(user1.BMI > user2.BMI) ? 
+    console.log(`${user1.firstName}'s BMI (${user1.BMI}) is higher than ${user2.firstName}'s (${user2.BMI})`) : 
+    console.log(`${user2.firstName}'s BMI (${user2.BMI}) is higher than ${user1.firstName}'s (${user1.BMI})`);
+// let whoseBMIHigher = (usesr1.BMI > user2.BMI) ? console.log(`${user1.firstName}'s BMI (${user1.BMI}) is higher than ${user2.firstName}'s (${user2.BMI})`);
+// console.log("whoseBMIHigher", whoseBMIHigher);
+
+// Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m tall.
