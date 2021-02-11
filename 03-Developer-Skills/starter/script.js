@@ -14,44 +14,23 @@
 // GOOD LUCK 😀
 
 // let weatherFrcstArr = [17, 21, 23];
+// console.log('check point 2');
+// console.log("*******", arr[i]); 
+//    console.log('check point 1');
 let weatherFrcstArr = [12,5,-5,0,4];
-
+console.log(weatherFrcstArr.join());
 
 let printForecast = function(arr){
-   console.log('check point 1');
-   let elements = [];
-
-for (let i = 0; i < arr.length; i++) {
-    console.log('check point 2');
-    console.log("*******", arr[i]); 
-    console.log("Initial arr.length ", arr.length);
-    arr.pop(i);
-    console.log("After arr.length ", arr.length);
-    // elements.push(arr[i]);
-    // arr.pop(arr[i]);
-    // console.log("New arr.length ", arr.length);
+   let str = '...';
+   for (let i = 0; i < arr.length; i++) {
+     str += ` ${arr[i]}ºC in ${i + 1} days ...`;
+    }
+//    console.log('check point 3');
+   return str;
     
-   console.log("..." + arr[i] + "C in 1 day");
-}
-//     console.log('elemts', elements);
-//  console.log("this is arr", arr);
-
-// let myArrLength = 0;
-// arr.forEach(element => {
-//     console.log('element', element);
-//     myArrLength++
-//     console.log('myArrLength==============', myArrLength);
-    
-    
-// });
-
-    //for backward loop to the our parametr
-    //
-    
-    console.log('check point 3');
 }
 
-console.log("function --->>>", printForecast(weatherFrcstArr));
+console.log(printForecast(weatherFrcstArr));
 
 // console.log('this is a printFrcstArr', weatherFrcstArr);
 
