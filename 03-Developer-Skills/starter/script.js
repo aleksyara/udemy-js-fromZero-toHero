@@ -14,9 +14,6 @@
 // GOOD LUCK 😀
 
 // let weatherFrcstArr = [17, 21, 23];
-// console.log('check point 2');
-// console.log("*******", arr[i]); 
-//    console.log('check point 1');
 let weatherFrcstArr = [12,5,-5,0,4];
 console.log(weatherFrcstArr.join());
 
@@ -54,7 +51,7 @@ let calcTempAmplitude = function(arr){
         } else if (arr[i] < minTemp) {
             // console.log('arr[i] in the else if', arr[i]);
             minTemp = arr[i];
-            console.log('minTemp ', minTemp);
+            // console.log('minTemp ', minTemp);
         }
     }
     
@@ -74,11 +71,28 @@ const temperatures2 = [34, -2, -6, -19, 'error', 9, 13, 17, 15, 14, 9, 5000];
 
 let calcTempAmplitudeFrom2Arr = function(arr1, arr2){
     let newArr = temperatures2.concat(temperatures);
-    console.log('new Arr', newArr);
+    // console.log('new Arr', newArr);
     calcTempAmplitude(newArr);
-
-
 }
 
-console.log(calcTempAmplitudeFrom2Arr(temperatures, temperatures2));
+calcTempAmplitudeFrom2Arr(temperatures, temperatures2);
 
+
+// PROBLEM 3:
+// convert Temp to Kelvin. User will enter the data through the pop-up window.
+
+const convertTempToKelvin = function (){
+
+   let measruments = {
+        value: parseInt(prompt('Enter degree in Celcues')),
+        type: 'temp',
+        name: "C",
+    }
+    // console.log(measruments.value);
+    let kelvin = measruments.value + 273; 
+    console.log('kelvin', kelvin);
+    
+    return kelvin
+};
+
+convertTempToKelvin();
