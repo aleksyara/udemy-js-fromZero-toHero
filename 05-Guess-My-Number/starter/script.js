@@ -57,6 +57,7 @@ document.querySelector('.again').addEventListener('click', function () {
 });
 
 
+// Helper function
 // display message function 
 const displayMessage = function(message){
     document.querySelector('.message').textContent = message;
