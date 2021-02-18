@@ -13,7 +13,7 @@ document.querySelector('.check').addEventListener('click', function () {
   console.log(guess, typeof guess);
   // when no imput
   if (!guess) {
-    // document.querySelector('.message').textContent = 'NO Number!';
+    // document.querySelector('.message').textContent = 'Invalid entry!';
     displayMessage('Invalid entry!');
     // When player wins
   } else if (guess === secretNumber) {
