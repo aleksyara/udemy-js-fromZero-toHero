@@ -26,4 +26,68 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 };
+
+// Destrucuring Objects
+
+const { name, openingHours, categories } = restaurant;
+console.log('given object: ', name, openingHours, categories);
+
+// Giving new Variables name
+const { name: restName, openingHours: hours, categories: type } = restaurant;
+console.log(restName, hours, type);
+console.log('given object: ', name, openingHours, categories);
+
+// Switching variables  (mutating)
+// a)
+let a = 1111;
+let b = 23;
+const obj = { a: 4, b: 5, c: 6 };
+({ a, b } = obj); //() is essential
+console.log('new a = ', a, 'new b = ', b);
+// b) Nested Object
+
+
+const user = {
+  id: 339,
+  name: 'Fred',
+  age: 42,
+  education: {
+    degree: 'Masters',
+  },
+};
+// change Variables name
+const {
+  education: {degree = "Bach"},
+} = user;
+console.log(degree); //prints: Masters
+
+// const {
+//   sat: { open: 2},
+// } = restaurant;
+// console.log(open, close);
+
+// Destructuring Arrays
+let [, main, secondary] = restaurant.categories;
+console.log('main', main);
+console.log('secondary', secondary);
+
+// Switching variables (mutating)
+[main, secondary] = [secondary, main];
+console.log('New main', main);
+console.log('New secondary', secondary);
+console.log('Updated ARR - restaurant.categories', restaurant.categories);
+
+//Recive 2 return values from function 'order'
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log('starter', starter);
+console.log('mainCourse', mainCourse);
+
+//Distructuring nested arr
+const nestedArr = [2, 6, [4, 7]];
+const [x, , [y, z]] = nestedArr;
+console.log(x, y, z);
