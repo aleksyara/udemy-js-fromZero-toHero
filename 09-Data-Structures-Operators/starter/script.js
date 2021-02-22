@@ -44,7 +44,26 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your pasta with ${ing1} ${ing2} ${ing3}`);
   },
+
+  
 };
+
+//REST Operator
+// a) destructuring
+const [ca, cb, ...things] = [1, 4, 5, 6, 7, 88, 12];
+console.log(things);
+
+// b) functions
+let addFun = function(...numbers){
+  let sum = 0;
+  for (let i =0; i<numbers.length; i++) sum += numbers[i]
+  console.log('sum:', sum);
+  
+}
+
+addFun(1, 8, 25, 10);
+const arr99 = [1, 4, 5, 6, 7, 88, 12];
+// addFun(...arr99);
 
 //Spread OperatorUseful cases:
 // a) copy array
