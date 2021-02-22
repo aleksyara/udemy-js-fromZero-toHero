@@ -30,7 +30,75 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  orderDeliery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be dekivered to ${address} at ${time}`
+    );
+  },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your pasta with ${ing1} ${ing2} ${ing3}`);
+  },
 };
+
+//Spread OperatorUseful cases:
+// a) copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// b) join arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+//Iterables: arrays, strings, maps, sets. NOT objects
+const str = 'Aleksei';
+const letters = [...str, '', 'S...'];
+console.log(...str);
+console.log(letters);
+
+//Real example:
+// const ingredients = [
+//   prompt("Let's make Pasta! Ingr 1?"),
+//   prompt("Let's make Pasta! Ingr 2?"),
+//   prompt("Let's make Pasta! Ingr 3?"),
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(...ingredients);
+
+// spread operator and Objects
+
+const newReastaurant = { foundedIn: 1998, ...restaurant, founder: 'Alex' };
+console.log('newRest --->>>', newReastaurant);
+
+//Changing value
+newReastaurant.name = "La Manti";
+console.log(restaurant.name);
+console.log(newReastaurant.name);
+
+
+
+
+
+
+// Deestructuring an Objects
+restaurant.orderDeliery({
+  time: '22.30',
+  address: 'Via del Sole, 21',
+  mainMenu: 2,
+  starterMenu: 2,
+});
+
+restaurant.orderDeliery({
+  time: '20.00',
+  address: 'Via del Sole, 999',
+  mainMenu: 1,
+  starterMenu: 0,
+});
 
 // Destrucuring Objects
 
@@ -51,6 +119,12 @@ const obj = { a: 4, b: 5, c: 6 };
 console.log('new a = ', a, 'new b = ', b);
 // b) Nested Object
 
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
+
+// My Example:
 
 const user = {
   id: 339,
@@ -61,15 +135,38 @@ const user = {
   },
 };
 // change Variables name
-const {
-  education: {degree = "Bach"},
-} = user;
-console.log(degree); //prints: Masters
+// const {
+//   education: { degree = 'Bach' },
+// } = user;
+// console.log(degree); // I expect to print: "Bach"
+
+user.education.degree = 'Bach';
+console.log(user);
+console.log(user.education.degree);
 
 // const {
 //   sat: { open: 2},
 // } = restaurant;
 // console.log(open, close);
+
+const student = {
+  newName: 'John Doe',
+  age: 16,
+  scores: {
+    maths: 74,
+    english: 63,
+  },
+};
+
+// We define 3 local variables: newName, maths, science
+const {
+  newName,
+  scores: { maths = 1, science = 50 },
+} = student;
+
+console.log(
+  `${newName} scored ${maths} in Maths and ${science} in Elementary Science.`
+);
 
 // Destructuring Arrays
 let [, main, secondary] = restaurant.categories;
@@ -87,7 +184,7 @@ const [starter, mainCourse] = restaurant.order(2, 0);
 console.log('starter', starter);
 console.log('mainCourse', mainCourse);
 
-//Distructuring nested arr
+//Destructuring nested arr
 const nestedArr = [2, 6, [4, 7]];
 const [x, , [y, z]] = nestedArr;
 console.log(x, y, z);
